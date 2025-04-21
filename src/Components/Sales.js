@@ -1,7 +1,7 @@
 import '../Styles/Sales.css';
 
-function Sales(isSpecialOffer) {
-    if (! isSpecialOffer.value)
+function Sales(sale) {
+    if (! sale.isSpecialOffer)
         return;
     return <div className="lmj-sales">Soldes</div>;
 }

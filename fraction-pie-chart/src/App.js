@@ -6,8 +6,8 @@ import './App.css'; // Importez le fichier CSS
 ChartJS.register(ArcElement);
 
 const FractionPieChart = () => {
-  const [fraction1, setFraction1] = useState({ numerator: 1, denominator: 2 });
-  const [fraction2, setFraction2] = useState({ numerator: 1, denominator: 2 });
+  const [fraction1, setFraction1] = useState({ numerator: 1, denominator: 1 });
+  const [fraction2, setFraction2] = useState({ numerator: 1, denominator: 1 });
 
   const handleInputChange = (e, fractionSetter) => {
     const { name, value } = e.target;
@@ -49,40 +49,44 @@ const FractionPieChart = () => {
     <div className="chart-wrapper">
       <div>
         <h2>Fraction 1</h2>
-        <input
-          type="number"
-          name="numerator"
-          value={fraction1.numerator}
-          onChange={(e) => handleInputChange(e, setFraction1)}
-          placeholder="Numerator"
-        />
-        <input
-          type="number"
-          name="denominator"
-          value={fraction1.denominator}
-          onChange={(e) => handleInputChange(e, setFraction1)}
-          placeholder="Denominator"
-        />
+        <div className="input-group">
+          <input
+            type="number"
+            name="numerator"
+            value={fraction1.numerator}
+            onChange={(e) => handleInputChange(e, setFraction1)}
+            placeholder="Numerator"
+          />
+          <input
+            type="number"
+            name="denominator"
+            value={fraction1.denominator}
+            onChange={(e) => handleInputChange(e, setFraction1)}
+            placeholder="Denominator"
+          />
+        </div>
         <div className="chart-container">
           <Pie data={createPieData(fraction1)} />
         </div>
       </div>
       <div>
         <h2>Fraction 2</h2>
-        <input
-          type="number"
-          name="numerator"
-          value={fraction2.numerator}
-          onChange={(e) => handleInputChange(e, setFraction2)}
-          placeholder="Numerator"
-        />
-        <input
-          type="number"
-          name="denominator"
-          value={fraction2.denominator}
-          onChange={(e) => handleInputChange(e, setFraction2)}
-          placeholder="Denominator"
-        />
+        <div className="input-group">
+          <input
+            type="number"
+            name="numerator"
+            value={fraction2.numerator}
+            onChange={(e) => handleInputChange(e, setFraction2)}
+            placeholder="Numerator"
+          />
+          <input
+            type="number"
+            name="denominator"
+            value={fraction2.denominator}
+            onChange={(e) => handleInputChange(e, setFraction2)}
+            placeholder="Denominator"
+          />
+        </div>
         <div className="chart-container">
           <Pie data={createPieData(fraction2)} />
         </div>
